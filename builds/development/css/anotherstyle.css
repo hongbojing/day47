@@ -34,3 +34,24 @@ pre.center{
     border: #F2773F solid;
 }
 
+ul>li{
+    display: inline;
+    border:2px solid red;
+    text-decoration: none;
+    padding: 5px;
+    background: #d1d1d1;
+
+}
+
+ul>li:hover{
+    background: #000;
+}
+ul>li>a:hover{
+    color: #ffffff;
+}
+.even{
+    background: #d1d1d1;
+}
+.fruit-frame{
+    border:1px solid #000;
+}
