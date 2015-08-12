@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
   <meta charset="UTF-8">
   <title>day #</title>
@@ -7,6 +7,39 @@
   <link rel="stylesheet" href="css/anotherstyle.css">
 </head>
 <body>
+  <div ng-controller="fruitController as fruitCtrl">
+    <ul>
+      <li><a href="#" ng-click="fruitCtrl.setDay('Monday')">Mon</a></li>
+      <li><a href="#" ng-click="fruitCtrl.setDay('Tuesday')">Tue</a></li>
+      <li><a href="#" ng-click="fruitCtrl.setDay('Wednesday')">Wed</a></li>
+      <li><a href="#" ng-click="fruitCtrl.setDay('Thursday')">Thur</a></li>
+      <li><a href="#" ng-click="fruitCtrl.setDay('Friday')">Fri</a></li>
+      <li><a href="#" ng-click="fruitCtrl.setDay('Saturday')">Sat</a></li>
+      <li><a href="#" ng-click="fruitCtrl.setDay('Sunday')">Sun</a></li>
+    </ul>
+
+    <p ng-repeat="data in fruitCtrl.daySource | filter:fruitCtrl.getDay()">
+      <!--ng-class="{even:!$even,odd:!$odd}"-->
+      I will have
+      <span>{{data.item}}</span>
+      as
+      <span>{{data.state}}</span>
+      on
+      <span>{{data.day}}</span>
+    </p>
+    <div ng-repeat="fruit in fruitCtrl.dataSource.apple" class="fruit-frame">
+      <p>Apple {{fruit.period}} eating time last in {{fruit.time}}</p>
+    </div>
+
+
+
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/lib/angular/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/fruit-controller.js"></script>
 
 
 </body>
